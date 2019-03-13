@@ -7,7 +7,7 @@ This repo contains code snippets useful for understanding Kotlin lambdas.
 * [Lambdas with a Context](https://proandroiddev.com/kotlin-pearls-lambdas-with-a-context-58f26ab2eb1d)
 
 ## Examples
-* [Kotlin Lambdas](src/main/kotlin/org/athenian/lambdas/_7_kotlin_lambdas)
+* [Kotlin Lambdas](src/main/kotlin/org/athenian/lambdas)
 
 ## Kotlin Lambda Example
 ```kotlin
