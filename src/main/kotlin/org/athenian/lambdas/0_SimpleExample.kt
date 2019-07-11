@@ -1,4 +1,4 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
 
 val constant = { 4 }
@@ -9,7 +9,7 @@ fun sum(x: Int, y: Int) = x + y
 
 fun twoIntFunc(x: Int, y: Int, block: (Int, Int) -> Int): Int = block(x, y)
 
-fun main(args: Array<String>) {
+fun main() {
 
     println(constant.invoke())
     println(constant())

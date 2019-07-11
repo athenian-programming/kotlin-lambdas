@@ -1,4 +1,4 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
 class ScopeFunctionTest {
 

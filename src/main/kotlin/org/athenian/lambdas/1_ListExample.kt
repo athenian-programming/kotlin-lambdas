@@ -1,4 +1,4 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
 
 fun nonLambdaCalculation(inputList: List<Int>): Int {
@@ -19,7 +19,7 @@ fun lambdaCalculation(inputList: List<Int>) =
         .map { it * it }
         .sum()
 
-fun main(args: Array<String>) {
+fun main() {
     val intVals = listOf(0, 2, 5, 6, 4, 7, 8, -1, 12, 14)
 
     println(nonLambdaCalculation(intVals))

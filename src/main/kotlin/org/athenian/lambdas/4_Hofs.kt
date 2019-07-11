@@ -1,4 +1,4 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
 fun main() {
     functionLiteral()
@@ -8,7 +8,7 @@ fun main() {
 
 fun functionLiteral() {
     val x: Double = 5.0
-    val name: String = "Uberto"
+    val name: String = "Umberto"
 
     //Function literal
     val square: (Int) -> Int = { it * it }

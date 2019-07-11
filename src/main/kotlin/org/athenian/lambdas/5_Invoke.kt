@@ -1,7 +1,6 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
-import org.athenian.lambdas._7_kotlin_lambdas.ReceiptTextFunc.receiptText
-
+import org.athenian.lambdas.ReceiptTextFunc.receiptText
 
 // From https://proandroiddev.com/kotlin-pearls-3-its-an-object-it-s-a-function-it-s-an-invokable-bc4bfed2e63f
 
@@ -11,8 +10,8 @@ class ReceiptText(val template: String) : (Int) -> String {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val subclass = ReceiptText("Bill amount: $%")
-            println(subclass(5))
+            val receiptText = ReceiptText("Bill amount: $%")
+            println(receiptText(5))
             // or
             println(ReceiptText("Bill amount: $%")(5))
         }

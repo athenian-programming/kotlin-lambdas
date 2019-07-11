@@ -1,4 +1,4 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
 import kotlin.random.Random.Default.nextDouble
 import kotlin.random.Random.Default.nextInt

@@ -1,4 +1,4 @@
-package org.athenian.lambdas._7_kotlin_lambdas
+package org.athenian.lambdas
 
 fun createString(block: StringBuilder.() -> Unit): String {
     val sb = StringBuilder()
@@ -6,7 +6,7 @@ fun createString(block: StringBuilder.() -> Unit): String {
     return sb.toString()
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val s =
         createString {
             append(4)
