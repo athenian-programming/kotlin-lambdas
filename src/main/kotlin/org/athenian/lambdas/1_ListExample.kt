@@ -12,7 +12,7 @@ fun nonLambdaCalculation(inputList: List<Int>): Int {
     return result
 }
 
-fun lambdaCalculation(inputList: List<Int>) =
+fun lambdaCalculation(inputList: List<Int>): Int =
     inputList
         .takeWhile { it != -1 }
         .filter { it % 2 == 0 }
