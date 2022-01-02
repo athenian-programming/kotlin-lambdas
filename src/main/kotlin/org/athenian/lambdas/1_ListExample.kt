@@ -1,6 +1,5 @@
 package org.athenian.lambdas
 
-
 fun nonLambdaCalculation(inputList: List<Int>): Int {
     var result = 0
     for (input in inputList) {
@@ -16,8 +15,7 @@ fun lambdaCalculation(inputList: List<Int>): Int =
     inputList
         .takeWhile { it != -1 }
         .filter { it % 2 == 0 }
-        .map { it * it }
-        .sum()
+        .sumOf { it * it }
 
 fun main() {
     val intVals = listOf(0, 2, 5, 6, 4, 7, 8, -1, 12, 14)

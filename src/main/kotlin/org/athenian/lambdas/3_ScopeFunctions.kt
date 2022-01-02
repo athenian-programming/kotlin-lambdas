@@ -3,7 +3,7 @@ package org.athenian.lambdas
 class ScopeFunctionTest {
 
     fun letExample(): Int {
-        val str: String = "StringVal"
+        val str = "StringVal"
         return str.let {
             println("this: $this")
             println("it: $it")
@@ -12,7 +12,7 @@ class ScopeFunctionTest {
     }
 
     fun alsoExample(): String {
-        val str: String = "StringVal"
+        val str = "StringVal"
         return str.also {
             println("this: $this")
             println("it: $it")
@@ -21,7 +21,7 @@ class ScopeFunctionTest {
     }
 
     fun runExample(): Int {
-        val str: String = "StringVal"
+        val str = "StringVal"
         return str.run {
             println("this: $this")
             //println("it: $it")
@@ -30,7 +30,7 @@ class ScopeFunctionTest {
     }
 
     fun applyExample(): String {
-        val str: String = "StringVal"
+        val str = "StringVal"
         return str.apply {
             println("this: $this")
             //println("it: $it")
@@ -39,7 +39,7 @@ class ScopeFunctionTest {
     }
 
     fun withExample(): Int {
-        val str: String = "StringVal"
+        val str = "StringVal"
         return with(str) {
             println("this: $this")
             //println("it: $it")

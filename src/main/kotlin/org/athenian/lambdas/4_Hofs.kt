@@ -7,8 +7,8 @@ fun main() {
 }
 
 fun functionLiteral() {
-    val x: Double = 5.0
-    val name: String = "Umberto"
+    val x = 5.0
+    val name = "Umberto"
 
     //Function literal
     val square: (Int) -> Int = { it * it }

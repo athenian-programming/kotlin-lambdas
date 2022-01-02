@@ -1,26 +1,27 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.31'
-    id "com.github.ben-manes.versions" version "0.22.0"
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id "com.github.ben-manes.versions" version "0.40.0"
 }
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    google()
+    mavenCentral()
 }
 
 def jvmVersion = '1.8'
-def logbackVersion = '1.2.3'
-def slfVersion = '1.7.25'
+def logbackVersion = '1.2.10'
+def slfVersion = '1.7.32'
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
 
     implementation "ch.qos.logback:logback-core:$logbackVersion"
     implementation "ch.qos.logback:logback-classic:$logbackVersion"
     implementation "org.slf4j:jul-to-slf4j:$slfVersion"
 
-    testImplementation 'org.assertj:assertj-core:3.13.2'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
 }
 
 group = 'org.athenian'

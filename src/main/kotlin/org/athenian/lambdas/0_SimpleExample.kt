@@ -1,6 +1,5 @@
 package org.athenian.lambdas
 
-
 // Lambda without params
 val constant1: () -> Int = fun(): Int { return 4 }
 val constant2: () -> Int = { 4 }
@@ -14,7 +13,6 @@ fun sum(x: Int, y: Int): Int = x + y
 fun twoIntFunc(x: Int, y: Int, block: (Int, Int) -> Int): Int = block(x, y)
 
 fun main() {
-
     println(constant2.invoke())
     println(constant2())
 
@@ -26,4 +24,3 @@ fun main() {
     println(twoIntFunc(5, 6) { x, y -> sum(x, y) })
     println(twoIntFunc(7, 8, ::sum))
 }
-
