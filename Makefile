@@ -12,4 +12,4 @@ compile:
 build: compile
 
 upgrade-wrapper:
-	./gradlew wrapper --gradle-version=7.4.2 --distribution-type=bin
+	./gradlew wrapper --gradle-version=7.5-rc-4 --distribution-type=bin
