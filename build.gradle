@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
-    id "com.github.ben-manes.versions" version "0.47.0"
+    id 'org.jetbrains.kotlin.jvm' version '1.9.22'
+    id "com.github.ben-manes.versions" version "0.51.0"
 }
 
 repositories {
@@ -14,7 +14,7 @@ dependencies {
     implementation "ch.qos.logback:logback-classic:$logback_version"
     implementation "org.slf4j:jul-to-slf4j:$slf_version"
 
-    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'org.assertj:assertj-core:3.25.3'
 }
 
 group = 'org.athenian'
