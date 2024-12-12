@@ -6,10 +6,8 @@ versioncheck:
 clean:
 	./gradlew clean
 
-compile:
+build: clean
 	./gradlew build -xtest
 
-build: compile
-
 upgrade-wrapper:
-	./gradlew wrapper --gradle-version=8.8 --distribution-type=bin
+	./gradlew wrapper --gradle-version=8.11.1 --distribution-type=bin
