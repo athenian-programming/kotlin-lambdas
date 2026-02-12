@@ -1,0 +1,45 @@
+Implement the following plan:
+
+# Plan: Convert tests from AssertJ to Kotest
+
+## Context
+The project has 8 test files using JUnit 5 + AssertJ. The user wants them converted to Kotest.
+
+## Changes
+
+### 1. Update `gradle/libs.versions.toml`
+- Remove the `assertj` version entry
+- Add `kotest` version (latest stable: `5.9.1`)
+- Replace `assertj-core` library with `kotest-runner-junit5` and `kotest-assertions-core`
+
+### 2. Update `build.gradle.kts`
+- Replace `testImplementation(libs.assertj.core)` with kotest dependencies
+- Keep `useJUnitPlatform()` (Kotest uses JUnit Platform runner)
+
+### 3. Convert all 8 test files to Kotest `FunSpec` style
+Each file follows the same pattern — replace:
+- `import org.assertj.core.api.Assertions.assertThat` / `import org.junit.jupiter.api.Test` → Kotest imports
+- `class FooTest { @Test fun ... }` → `class FooTest : FunSpec({ test("...") { ... } })`
+- `assertThat(x).isEqualTo(y)` → `x shouldBe y`
+- `assertThat(x).contains(y)` → `x shouldContain y`
+- `assertThat(x).isEmpty()` → `x shouldBe ""`  (or `x.shouldBeEmpty()`)
+- `assertThat(x).isInstanceOf(Foo::class.java)` → `x.shouldBeInstanceOf<Foo>()`
+- `assertThat(x).hasSize(n)` → `x shouldHaveSize n`
+- `assertThat(x).isBetween(a, b)` → `x shouldBeInRange a..b` (for Int) / manual check for Double
+- `assertThat(x).containsExactly(...)` → `x shouldContainExactly listOf(...)`
+
+Files to convert:
+- `SimpleExampleTest.kt`
+- `ListExampleTest.kt`
+- `FuncParamsTest.kt`
+- `ScopeFunctionsTest.kt`
+- `HofsTest.kt`
+- `InvokeTest.kt`
+- `CurryingTest.kt`
+- `OverloadedOpsTest.kt`
+
+## Verification
+- Run `./gradlew test` to confirm all tests pass
+
+
+If you need specific details from before exiting plan mode (like exact code snippets, error messages, or content you generated), read the full transcript at: /Users/pambrose/.REDACTED.jsonl

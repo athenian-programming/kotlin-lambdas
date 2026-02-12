@@ -1,0 +1,35 @@
+{
+  "cli_version": "0.4.2",
+  "checkpoint_id": "8c4b62bb5491",
+  "strategy": "manual-commit",
+  "branch": "bug-fix",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "build.gradle.kts",
+    "gradle/libs.versions.toml",
+    "src/test/kotlin/org/athenian/lambdas/CurryingTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/FuncParamsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/HofsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/InvokeTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/ListExampleTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/OverloadedOpsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/ScopeFunctionsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/SimpleExampleTest.kt"
+  ],
+  "sessions": [
+    {
+      "metadata": "/8c/4b62bb5491/0/metadata.json",
+      "transcript": "/8c/4b62bb5491/0/full.jsonl",
+      "context": "/8c/4b62bb5491/0/context.md",
+      "content_hash": "/8c/4b62bb5491/0/content_hash.txt",
+      "prompt": "/8c/4b62bb5491/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 8,
+    "cache_creation_tokens": 29895,
+    "cache_read_tokens": 163771,
+    "output_tokens": 23,
+    "api_call_count": 6
+  }
+}

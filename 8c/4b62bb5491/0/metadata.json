@@ -1,0 +1,38 @@
+{
+  "cli_version": "0.4.2",
+  "checkpoint_id": "8c4b62bb5491",
+  "session_id": "09547591-05af-46c9-bfb4-144f88843f49",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-12T05:19:10.183633Z",
+  "branch": "bug-fix",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "build.gradle.kts",
+    "gradle/libs.versions.toml",
+    "src/test/kotlin/org/athenian/lambdas/CurryingTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/FuncParamsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/HofsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/InvokeTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/ListExampleTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/OverloadedOpsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/ScopeFunctionsTest.kt",
+    "src/test/kotlin/org/athenian/lambdas/SimpleExampleTest.kt"
+  ],
+  "agent": "Claude Code",
+  "token_usage": {
+    "input_tokens": 8,
+    "cache_creation_tokens": 29895,
+    "cache_read_tokens": 163771,
+    "output_tokens": 23,
+    "api_call_count": 6
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-12T05:19:10.168089Z",
+    "agent_lines": 0,
+    "human_added": 16,
+    "human_modified": 342,
+    "human_removed": 0,
+    "total_committed": 199,
+    "agent_percentage": 0
+  }
+}
