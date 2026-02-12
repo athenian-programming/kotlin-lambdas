@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.4.2",
+  "checkpoint_id": "96491a19a574",
+  "session_id": "ef0691c1-d744-4ea8-b2dd-da6d8ed97053",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-12T00:03:38.074256Z",
+  "branch": "bug-fix",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "bug-review.md",
+    "src/main/kotlin/org/athenian/lambdas/7_OverloadedOps.kt"
+  ],
+  "agent": "Claude Code",
+  "transcript_identifier_at_start": "39852da0-84e6-4bf7-847a-f27f36eed8fc",
+  "token_usage": {
+    "input_tokens": 16,
+    "cache_creation_tokens": 6737,
+    "cache_read_tokens": 164692,
+    "output_tokens": 663,
+    "api_call_count": 8
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-12T00:03:38.066863Z",
+    "agent_lines": 19,
+    "human_added": 2,
+    "human_modified": 1,
+    "human_removed": 0,
+    "total_committed": 22,
+    "agent_percentage": 86.36363636363636
+  }
+}

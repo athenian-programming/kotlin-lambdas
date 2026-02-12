@@ -1,0 +1,13 @@
+have a look at the codebase and find any bugs
+
+---
+
+summarize your findings to bug-review.md
+
+---
+
+show tasks
+
+---
+
+fix the bug
