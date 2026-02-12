@@ -16,7 +16,7 @@ fun main() {
         val parts = it.split(' ')
         when (parts[0]) {
             "go" -> if (parts.size > 1) "going ${parts[1]}" else "Missing go arg"
-            "eat" -> if (parts.size > 1) "eating ${parts[1]}" else "Missing eateat arg"
+            "eat" -> if (parts.size > 1) "eating ${parts[1]}" else "Missing eat arg"
             "quit" -> throw InterruptedException("Program has been terminated by user")
             else -> "I don't think so..."
         }
