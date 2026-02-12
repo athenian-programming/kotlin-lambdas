@@ -18,6 +18,11 @@ dependencies {
     implementation(libs.slf4j.jul)
 
     testImplementation(libs.assertj.core)
+    testImplementation(kotlin("test"))
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.withType<JavaCompile> {
