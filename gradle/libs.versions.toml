@@ -1,9 +1,9 @@
 [versions]
-kotlin = "2.2.0"
-logback = "1.5.18"
-slf4j = "2.0.13"
+kotlin = "2.3.10"
+logback = "1.5.29"
+slf4j = "2.0.17"
 assertj = "4.0.0-M1"
-versions = "0.52.0"
+versions = "0.53.0"
 
 [libraries]
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
