@@ -1,55 +1,51 @@
 package org.athenian.lambdas
 
+import io.kotest.core.spec.style.FunSpec
+import io.kotest.matchers.shouldBe
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
 
-class ScopeFunctionsTest {
+class ScopeFunctionsTest : FunSpec(
+    {
 
-  private val sft = ScopeFunctionTest()
+        val sft = ScopeFunctionTest()
 
-  private fun <T> suppressOutput(block: () -> T): T {
-    val originalOut = System.out
-    try {
-      System.setOut(PrintStream(ByteArrayOutputStream()))
-      return block()
-    } finally {
-      System.setOut(originalOut)
-    }
-  }
+        fun <T> suppressOutput(block: () -> T): T {
+            val originalOut = System.out
+            try {
+                System.setOut(PrintStream(ByteArrayOutputStream()))
+                return block()
+            } finally {
+                System.setOut(originalOut)
+            }
+        }
 
-  @Test
-  fun `letExample returns lambda result`() {
-    assertThat(suppressOutput { sft.letExample() }).isEqualTo(42)
-  }
+        test("letExample returns lambda result") {
+            suppressOutput { sft.letExample() } shouldBe 42
+        }
 
-  @Test
-  fun `alsoExample returns the original string`() {
-    assertThat(suppressOutput { sft.alsoExample() }).isEqualTo("StringVal")
-  }
+        test("alsoExample returns the original string") {
+            suppressOutput { sft.alsoExample() } shouldBe "StringVal"
+        }
 
-  @Test
-  fun `runExample returns lambda result`() {
-    assertThat(suppressOutput { sft.runExample() }).isEqualTo(42)
-  }
+        test("runExample returns lambda result") {
+            suppressOutput { sft.runExample() } shouldBe 42
+        }
 
-  @Test
-  fun `applyExample returns the original string`() {
-    assertThat(suppressOutput { sft.applyExample() }).isEqualTo("StringVal")
-  }
+        test("applyExample returns the original string") {
+            suppressOutput { sft.applyExample() } shouldBe "StringVal"
+        }
 
-  @Test
-  fun `withExample returns lambda result`() {
-    assertThat(suppressOutput { sft.withExample() }).isEqualTo(42)
-  }
+        test("withExample returns lambda result") {
+            suppressOutput { sft.withExample() } shouldBe 42
+        }
 
-  @Test
-  fun `main runs without error`() {
-    suppressOutput {
-      Class.forName("org.athenian.lambdas._3_ScopeFunctionsKt")
-        .getMethod("main")
-        .invoke(null)
-    }
-  }
-}
+        test("main runs without error") {
+            suppressOutput {
+                Class.forName("org.athenian.lambdas._3_ScopeFunctionsKt")
+                    .getMethod("main")
+                    .invoke(null)
+            }
+        }
+    },
+)

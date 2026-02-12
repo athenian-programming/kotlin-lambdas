@@ -1,74 +1,68 @@
 package org.athenian.lambdas
 
+import io.kotest.core.spec.style.FunSpec
+import io.kotest.matchers.shouldBe
+import io.kotest.matchers.string.shouldContain
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
 
-class InvokeTest {
+class InvokeTest : FunSpec(
+  {
 
-  private fun captureOutput(block: () -> Unit): String {
-    val originalOut = System.out
-    val output = ByteArrayOutputStream()
-    try {
-      System.setOut(PrintStream(output))
-      block()
-    } finally {
-      System.setOut(originalOut)
+    fun captureOutput(block: () -> Unit): String {
+      val originalOut = System.out
+      val output = ByteArrayOutputStream()
+      try {
+        System.setOut(PrintStream(output))
+        block()
+      } finally {
+        System.setOut(originalOut)
+      }
+      return output.toString()
     }
-    return output.toString()
-  }
 
-  @Test
-  fun `ReceiptText invoke replaces placeholder with amount`() {
-    val receiptText = ReceiptText("Bill amount: $%")
-    assertThat(receiptText(5)).isEqualTo("Bill amount: $5")
-    assertThat(receiptText.invoke(10)).isEqualTo("Bill amount: $10")
-  }
+    test("ReceiptText invoke replaces placeholder with amount") {
+      val receiptText = ReceiptText("Bill amount: $%")
+      receiptText(5) shouldBe "Bill amount: $5"
+      receiptText.invoke(10) shouldBe "Bill amount: $10"
+    }
 
-  @Test
-  fun `ReceiptText template property is accessible`() {
-    val receiptText = ReceiptText("Template: %")
-    assertThat(receiptText.template).isEqualTo("Template: %")
-  }
+    test("ReceiptText template property is accessible") {
+      val receiptText = ReceiptText("Template: %")
+      receiptText.template shouldBe "Template: %"
+    }
 
-  @Test
-  fun `ReceiptText companion main runs without error`() {
-    captureOutput { ReceiptText.main(arrayOf()) }
-  }
+    test("ReceiptText companion main runs without error") {
+      captureOutput { ReceiptText.main(arrayOf()) }
+    }
 
-  @Test
-  fun `ReceiptTextFunc receiptText returns function that replaces placeholder`() {
-    val hof = ReceiptTextFunc.receiptText("Bill amount: $%")
-    assertThat(hof(5)).isEqualTo("Bill amount: $5")
-    assertThat(ReceiptTextFunc.receiptText("Amount: %")(100)).isEqualTo("Amount: 100")
-  }
+    test("ReceiptTextFunc receiptText returns function that replaces placeholder") {
+      val hof = ReceiptTextFunc.receiptText("Bill amount: $%")
+      hof(5) shouldBe "Bill amount: $5"
+      ReceiptTextFunc.receiptText("Amount: %")(100) shouldBe "Amount: 100"
+    }
 
-  @Test
-  fun `ReceiptTextFunc main runs without error`() {
-    captureOutput { ReceiptTextFunc.main(arrayOf()) }
-  }
+    test("ReceiptTextFunc main runs without error") {
+      captureOutput { ReceiptTextFunc.main(arrayOf()) }
+    }
 
-  @Test
-  fun `ReceiptTextObj invoke with amount only`() {
-    assertThat(ReceiptTextObj(5)).isEqualTo("Bill amount: $5")
-  }
+    test("ReceiptTextObj invoke with amount only") {
+      ReceiptTextObj(5) shouldBe "Bill amount: $5"
+    }
 
-  @Test
-  fun `ReceiptTextObj invoke with template and amount`() {
-    assertThat(ReceiptTextObj("Custom: $%", 10)).isEqualTo("Custom: $10")
-  }
+    test("ReceiptTextObj invoke with template and amount") {
+      ReceiptTextObj("Custom: $%", 10) shouldBe "Custom: $10"
+    }
 
-  @Test
-  fun `ReceiptTextObj main runs without error`() {
-    captureOutput { ReceiptTextObj.main(arrayOf()) }
-  }
+    test("ReceiptTextObj main runs without error") {
+      captureOutput { ReceiptTextObj.main(arrayOf()) }
+    }
 
-  @Test
-  fun `ReceiptTextCombo main produces correct receipts`() {
-    val result = captureOutput { ReceiptTextCombo.main(arrayOf()) }
-    assertThat(result).contains("Thank you for $100!")
-    assertThat(result).contains("TA 101")
-    assertThat(result).contains("Bill amount: $102")
-  }
-}
+    test("ReceiptTextCombo main produces correct receipts") {
+      val result = captureOutput { ReceiptTextCombo.main(arrayOf()) }
+      result shouldContain "Thank you for $100!"
+      result shouldContain "TA 101"
+      result shouldContain "Bill amount: $102"
+    }
+  },
+)

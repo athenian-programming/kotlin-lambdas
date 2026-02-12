@@ -17,8 +17,8 @@ dependencies {
     implementation(libs.logback.classic)
     implementation(libs.slf4j.jul)
 
-    testImplementation(libs.assertj.core)
-    testImplementation(kotlin("test"))
+    testImplementation(libs.kotest.runner.junit5)
+    testImplementation(libs.kotest.assertions.core)
 }
 
 tasks.test {
